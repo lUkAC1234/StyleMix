@@ -46,6 +46,27 @@ document.addEventListener('DOMContentLoaded', function () {
         $(".main-carousel-count-column:eq(" + activeIndex + ")").addClass("active");
     });
     $(".main-carousel-count-column:eq(" + mainCarousel.find(".owl-item.active").index() + ")").addClass("active");
+
+    $(".photo-gallery-container").owlCarousel({
+        items: 1,
+        center: true,
+        responsive: {
+            0: { items: 1 },
+        },
+    });
+    
+    $(".testominals-replies-container").owlCarousel({
+        items: 1,
+        center: true,
+        nav: true,
+        navText: [
+            '<i class="fa-solid fa-arrow-left testominalUp"></i>',
+            '<i class="fa-solid fa-arrow-right testominalDown"></i>'
+        ],
+        responsive: {
+            0: { items: 1 },
+        },
+    });
 })(jQuery);
 
 
