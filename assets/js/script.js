@@ -46,14 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
         $(".main-carousel-count-column:eq(" + activeIndex + ")").addClass("active");
     });
     $(".main-carousel-count-column:eq(" + mainCarousel.find(".owl-item.active").index() + ")").addClass("active");
-
-    $(".photo-gallery-container").owlCarousel({
-        items: 1,
-        center: true,
-        responsive: {
-            0: { items: 1 },
-        },
-    });
     
     $(".testominals-replies-container").owlCarousel({
         items: 1,
@@ -69,6 +61,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 })(jQuery);
 
+/* Photo Gallery Code Started */
+document.addEventListener('DOMContentLoaded', function () {
+    const textColumns = document.querySelectorAll('.photo-gallery-text-column');
+    const galleryColumn = document.querySelector('.photo-gallery-column');
+    const firstImage = textColumns[0].dataset.image;
+
+    // Set default background image
+    galleryColumn.style.backgroundImage = `url(${firstImage})`;
+
+    textColumns.forEach((textColumn) => {
+        textColumn.addEventListener('mouseover', function () {
+            const backgroundImage = textColumn.dataset.image;
+            galleryColumn.style.backgroundImage = `url(${backgroundImage})`;
+        });
+    });
+});
+/* Photo Gallery Code Ended */
 
 
 
